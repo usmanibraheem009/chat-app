@@ -1,12 +1,12 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { persistReducer, persistStore } from 'redux-persist';
-import authReducer from "../slices/authSlice/authSlice";
-import chatsReducer from "../slices/chat-slice/chat-slice";
-import imageReducer from "../slices/imageSlice/imageSlice";
-import messagesReducer from "../slices/messageSlice/messageSlice";
-import themeReducer from "../slices/themeSlice/themeSlice";
-import usersListReducer from "../slices/usersData/usersList";
+import AuthReducer from "../slices/authSlice/authSlice";
+import ChatsReducer from "../slices/chat-slice/chat-slice";
+import ImageReducer from "../slices/imageSlice/imageSlice";
+import MessagesReducer from "../slices/messageSlice/messageSlice";
+import ThemeReducer from "../slices/themeSlice/themeSlice";
+import UsersListReducer from "../slices/usersData/usersList";
 
 const persistConfig = {
     key: 'root',
@@ -15,12 +15,12 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-    authReducer: authReducer,
-    imagePicker: imageReducer,
-    usersList: usersListReducer,
-    messagesList: messagesReducer,
-    themeMode: themeReducer,
-    chatReducer: chatsReducer
+    authReducer: AuthReducer,
+    imagePicker: ImageReducer,
+    usersList: UsersListReducer,
+    messagesList: MessagesReducer,
+    themeMode: ThemeReducer,
+    chatReducer: ChatsReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: 'grey',
     fontWeight: 500,
+    maxWidth: 220,
   },
   textContainer: {
     paddingLeft: 20,

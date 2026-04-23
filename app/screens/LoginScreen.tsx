@@ -31,6 +31,8 @@ const LoginScreen = () => {
                 password: values.password
             });
             dispatch(setUser(profile));
+            console.log('Logged in user profile: ', profile)
+            router.replace('/(tabs)');
         } catch (error) {
             console.log('Error logging in user: ', error)
         } finally {

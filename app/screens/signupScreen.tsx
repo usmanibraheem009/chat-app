@@ -100,7 +100,7 @@ const SignupScreen = () => {
                                         <MyInputTab placeholderText='Confirm Password' value={values.confirmPassword} onChangeText={handleChange('confirmPassword')} />
                                         {touched.email && errors.confirmPassword && (<ErrorText errorText={errors.confirmPassword} />)}
 
-                                        <SimpleButton btnText={loading ? <ActivityIndicator size={'large'} color={theme.text.primary} /> : 'Login'} backgroundColor='blue' onPress={handleSubmit} />
+                                        <SimpleButton btnText={loading ? <ActivityIndicator size={'large'} color={theme.text.primary} /> : 'Sign up'} backgroundColor='blue' onPress={handleSubmit} />
 
                                     </View>
                                 )

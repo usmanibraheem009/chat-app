@@ -14,14 +14,17 @@ const SplashScreen = () => {
     console.log('loading: ', loading)
 
     useEffect(() => {
-        if(!authChecked) return;
+        // if(!authChecked) return;
 
-        if (user?.uid) {
-            router.replace('/(tabs)');
-        } else {
-            router.replace('/screens/LoginScreen');
-        }
+        const timer = setTimeout(() => {
+            if (user?.uid) {
+                router.replace('/(tabs)');
+            } else {
+                router.replace('/screens/LoginScreen');
+            }
+        }, 2000); // 2 second timeout
 
+        return () => clearTimeout(timer);
     }, [user, authChecked]);
     return (
         <View style={styles.container}>
